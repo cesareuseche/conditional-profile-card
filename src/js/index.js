@@ -40,11 +40,19 @@ function render(variables = {}) {
           <h3>${variables.city != null ? variables.city : "City"} ${
     variables.country != null ? variables.country : "Country"
   }</h3>
-          <u  class="${variables.socialMediaPosition}">
-            <li><a href="https://twitter.com/${variables.twitter}"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://github.com/${variables.github}"><i class="fa fa-github"></i></a></li>
-            <li><a href="https://linkedin.com${variables.linkedin}"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com${variables.instagram}"><i class="fa fa-instagram"></i></a></li>
+          <ul  class="${variables.socialMediaPosition}">
+            <li><a href="https://twitter.com/${
+              variables.twitter != null ? variables.twitter : "home"
+            } "><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${
+              variables.github != null ? variables.github : "home"
+            }"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://linkedin.com${
+              variables.linkedin != null ? variables.linkedin : "/home"
+            }"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com${
+              variables.instagram != null ? variables.instagram : ""
+            }"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
@@ -62,17 +70,17 @@ window.onload = function() {
     // this is the url for the profile avatar
     avatarURL: "https://randomuser.me/api/portraits/men/10.jpg",
     // social media bar position (left or right)
-    socialMediaPosition: "position-left", "position-right",
+    socialMediaPosition: "position-right",
     // social media usernames
     twitter: null,
-    github: "alesanchezr",
+    github: null,
     linkedin: null,
     instagram: null,
     name: null,
     lastname: null,
     role: null,
     country: null,
-    city: null,
+    city: null
   };
   render(window.variables); //render the card for the first time
 
